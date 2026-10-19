@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture — Câmera Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>CAPTURE<span>.</span></h1>
+        <p>Estúdio de captura digital</p>
+    </header>
+
+    <main class="container">
+        <section class="painel">
+            <div class="titulo">
+                <span class="indicador" id="indicador"></span>
+                <div>
+                    <h2>Câmera</h2>
+                    <p id="status">Câmera desligada</p>
+                </div>
+            </div>
+
+            <div class="visualizacao">
+                <video id="video" autoplay playsinline></video>
+                <div class="mensagem-camera" id="mensagemCamera">
+                    <span class="icone-camera">◎</span>
+                    <p>Ative a câmera para começar</p>
+                </div>
+            </div>
+
+            <label for="identificacao">Identificação da captura</label>
+            <input
+                type="text"
+                id="identificacao"
+                placeholder="Ex.: João Silva - Turma A"
+                maxlength="60"
+            >
+
+            <label for="efeito">Efeito visual</label>
+            <select id="efeito">
+                <option value="grayscale(100%)">Preto e branco</option>
+                <option value="none">Original</option>
+                <option value="sepia(100%)">Sépia</option>
+                <option value="contrast(150%) saturate(130%)">Alto contraste</option>
+            </select>
+
+            <div class="botoes">
+                <button id="btnCamera" class="btn-secundario">
+                    Ligar câmera
+                </button>
+                <button id="btnCapturar" class="btn-principal" disabled>
+                    Capturar imagem
+                </button>
+            </div>
+
+            <p class="aviso" id="aviso" role="status">
+                Permita o acesso à câmera para começar.
+            </p>
+        </section>
+
+        <section class="painel painel-resultado">
+            <div class="titulo">
+                <div>
+                    <h2>Fotografia capturada</h2>
+                    <p>Sua imagem processada aparecerá aqui.</p>
+                </div>
+            </div>
+
+            <div class="resultado">
+                <img id="imagemFinal" alt="Fotografia processada" hidden>
+                <div id="resultadoVazio" class="resultado-vazio">
+                    <span>▧</span>
+                    <p>Nenhuma imagem capturada</p>
+                </div>
+            </div>
+
+            <a id="btnBaixar" class="btn-baixar" hidden
+               download="captura.png">
+                Baixar fotografia
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>CAPTURE © 2026 · Processamento realizado no navegador</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
